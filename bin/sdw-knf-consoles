@@ -1,0 +1,105 @@
+#!/bin/bash
+
+# List of knfs names
+knfnames=('access' 'cpe' 'wan' 'ryu')
+
+KNFCMD="microk8s kubectl exec -n $SDWNS -it"
+KNFDS="microk8s kubectl get deployments -n $SDWNS"
+
+allknfs=${knfnames[*]}
+USAGE="
+Usage:
+  sdw-knf-consoles <cmd> <ns_id>
+    to open|close all consoles
+    Valid values:
+      <cmd>: open close
+      <ns_id>: network service id [1,2]
+
+  sdw-knf-consoles <cmd> <ns_id> <knf-name>
+       to open the console of a specific knf
+       Valid values:
+           <cmd>: open close
+           <ns_id>: network service id [1,2]
+           <knf-name>: $allknfs
+"
+
+function deployment_id() {
+    suffix='chart'
+    PATTERN="^$2$1-$2$suffix "
+    echo `$KNFDS | grep -o $PATTERN` 
+}
+
+function knf_console {
+
+    cmd=$1
+    nsid=$2
+    knfname=$3
+
+    if [ "$cmd" == 'open' ]; then
+        echo "--"
+        echo "-- Starting console of knf $knfname of NS $nsid"
+        # Get Deployment id
+        DID=$(deployment_id $nsid $knfname)
+	    if [ "$DID" ]; then 
+            KID="deploy/$DID"
+            # Set KNF hostname
+            echo "$KNFCMD $KID -- hostname $knfname-$nsid"
+            $KNFCMD $KID -- hostname $knfname-$nsid
+
+            # Start console
+            echo "xfce4-terminal --title $knfname-$nsid --hide-menubar -x $KNFCMD $KID \-\- /bin/bash >/dev/null 2>&1 &"
+            xfce4-terminal --title $knfname-$nsid --hide-menubar -x $KNFCMD $KID \-\- /bin/bash >/dev/null 2>&1 &
+	    else
+	        echo "-- WARNING: knf $knfname-$nsid not started"
+	    fi
+
+    elif [ "$cmd" == 'close' ]; then
+        echo "--"
+        echo "-- Closing console of knf $knfname-$nsid"
+        while wmctrl -c $knfname-$nsid; do sleep 0.5; done
+    fi
+}
+
+#
+# Main
+#
+if [ ! "$SDWNS" ] ; then
+    echo ""
+    echo "ERROR: SDWNS variable not defined"
+    exit 1
+fi
+
+if [ "$1" == 'open' ] || [ "$1" == 'close' ] ; then
+    cmd=$1
+else
+    echo ""
+    echo "ERROR: unknown command '$1'"
+    echo "$USAGE"
+    exit 1
+fi
+
+if [ ! "$2" ] ; then
+    echo ""
+    echo "$USAGE"
+    exit 1
+fi
+NS=$2
+if [ "$3" ]; then
+    if [[ ! " ${knfnames[@]} " =~ " $3 " ]]; then
+        echo ""
+        echo "ERROR: unknown KNF '$3'"
+        echo "$USAGE"
+        exit 1
+    fi
+    knf=$3
+    knf_console $cmd $NS $knf
+else
+    echo "--"
+    echo "-- Starting all consoles"
+    echo "--"
+
+    for j in ${!knfnames[*]}; do 
+        knf_console $cmd $NS ${knfnames[$j]}
+    done
+fi
+echo "-- done"

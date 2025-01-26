@@ -1,0 +1,1 @@
+{"dpid": 1, "priority": 45001, "cookie": 202003, "match": {  "in_port": 1, "dl_dst": "00:00:00:00:00:20"}, "actions": [{"type":"OUTPUT", "port":2}]}

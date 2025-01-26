@@ -1,0 +1,1 @@
+6eeb9adfe73c3ba04abce2de9e8a9b41	wanknf_vnfd/wanknf_vnfd.yaml

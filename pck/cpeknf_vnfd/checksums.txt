@@ -1,0 +1,1 @@
+272ead0fd68495b49851efecb0719a09	cpeknf_vnfd/cpeknf_vnfd.yaml
