@@ -9,4 +9,3 @@ COPY vnx_config_nat vnx_config_nat
 
 RUN chmod +x vnx_config_nat
 
-

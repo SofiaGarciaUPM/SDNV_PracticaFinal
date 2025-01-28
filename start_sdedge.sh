@@ -7,7 +7,6 @@
 # VACC: "pod_id" or "deploy/deployment_id" of the access vnf
 # VCPE: "pod_id" or "deploy/deployment_id" of the cpd vnf
 # VWAN: "pod_id" or "deploy/deployment_id" of the wan vnf
-# VRYU: "pod_id" or "deploy/deployment_id" of the ryu vnf
 # CUSTUNIP: the ip address for the customer side of the tunnel
 # VNFTUNIP: the ip address for the vnf side of the tunnel
 # VCPEPUBIP: the public ip address for the vcpe
@@ -20,7 +19,7 @@ set -u # to verify variables are defined
 : $VACC
 : $VCPE
 : $VWAN
-: $VRYU
+: $VCTRL
 : $CUSTUNIP
 : $CUSTPREFIX
 : $VNFTUNIP
@@ -45,18 +44,16 @@ if [[ ! $VWAN =~ "-wanchart"  ]]; then
     exit 1
 fi
 
-if [[ ! $VRYU =~ "-ryuchart"  ]]; then
+if [[ ! $VCTRL =~ "-ctrlchart"  ]]; then
     echo ""       
-    echo "ERROR: incorrect <ryu_deployment_id>: $VRYU"
+    echo "ERROR: incorrect <ctrl_deployment_id>: $VCTRL"
     exit 1
 fi
-
-
 
 ACC_EXEC="$KUBECTL exec -n $SDWNS $VACC --"
 CPE_EXEC="$KUBECTL exec -n $SDWNS $VCPE --"
 WAN_EXEC="$KUBECTL exec -n $SDWNS $VWAN --"
-RYU_EXEC="$KUBECTL exec -n $SDWNS $VRYU --"
+CTRL_EXEC="$KUBECTL exec -n $SDWNS $VCTRL --"
 
 # IP privada por defecto para el vCPE
 VCPEPRIVIP="192.168.255.254"
@@ -77,12 +74,13 @@ echo "IPCPE = $IPCPE"
 IPWAN=`$WAN_EXEC hostname -I | awk '{print $1}'`
 echo "IPWAN = $IPWAN"
 
-IPRYU=`$RYU_EXEC hostname -I | awk '{print $1}'`
-echo "IPRYU = $IPRYU"
+IPCTRL=`$CTRL_EXEC hostname -I | awk '{print $1}'`
+echo "IPCTRL = $IPCTRL"
 
 ## 2. Iniciar el Servicio OpenVirtualSwitch en wan VNF:
 echo "## 2. Iniciar el Servicio OpenVirtualSwitch en wan VNF"
 $WAN_EXEC service openvswitch-switch start
+$CTRL_EXEC service openvswitch-switch start
 
 ## 3. En VNF:access agregar un bridge y sus vxlans
 echo "## 3. En VNF:access agregar un bridge y sus vxlan"

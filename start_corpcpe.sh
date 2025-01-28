@@ -5,7 +5,7 @@
 # SDWNS: cluster namespace in the cluster vim
 # NETNUM: used to select external networks
 # VACC: "pod_id" or "deploy/deployment_id" of the access vnf
-# VCPE: "pod_id" or "deploy/deployment_id" of the cpe vnf
+# VCPE: "pod_id" or "deploy/deployment_id" of the cpd vnf
 # CUSTUNIP: the ip address for the customer side of the tunnel
 # VNFTUNIP: the ip address for the vnf side of the tunnel
 # VCPEPUBIP: the public ip address for the vcpe
@@ -17,6 +17,7 @@ set -u # to verify variables are defined
 : $NETNUM
 : $VACC
 : $VCPE
+: $VCTRL
 : $CUSTUNIP
 : $CUSTPREFIX
 : $VNFTUNIP
@@ -35,8 +36,15 @@ if [[ ! $VCPE =~ "-cpechart"  ]]; then
    exit 1
 fi
 
+if [[ ! $VCTRL =~ "-ctrlchart"  ]]; then
+    echo ""       
+    echo "ERROR: incorrect <ctrl_deployment_id>: $VCTRL"
+    exit 1
+fi
+
 ACC_EXEC="$KUBECTL exec -n $SDWNS $VACC --"
 CPE_EXEC="$KUBECTL exec -n $SDWNS $VCPE --"
+CTRL_EXEC="$KUBECTL exec -n $SDWNS $VCTRL --"
 
 # IP privada por defecto para el vCPE
 VCPEPRIVIP="192.168.255.254"
@@ -53,6 +61,9 @@ echo "IPACCESS = $IPACCESS"
 
 IPCPE=`$CPE_EXEC hostname -I | awk '{print $1}'`
 echo "IPCPE = $IPCPE"
+
+IPCTRL=`$CTRL_EXEC hostname -I | awk '{print $1}'`
+echo "IPCTRL = $IPCTRL"
 
 ## 2. Iniciar el Servicio OpenVirtualSwitch en cada VNF:
 echo "## 2. Iniciar el Servicio OpenVirtualSwitch en cada VNF"
@@ -78,8 +89,10 @@ $CPE_EXEC ip link add axscpe type vxlan id 4 remote $IPACCESS dstport 8742 dev e
 $CPE_EXEC ovs-vsctl add-port brint axscpe
 $CPE_EXEC ifconfig axscpe up
 $CPE_EXEC ifconfig brint mtu 1400
+
 $CPE_EXEC ifconfig net$NETNUM $VCPEPUBIP/24
 $CPE_EXEC ip route add $IPACCESS/32 via $K8SGW
+$CPE_EXEC ip route add $IPCTRL/32 via $K8SGW
 $CPE_EXEC ip route del 0.0.0.0/0 via $K8SGW
 $CPE_EXEC ip route add 0.0.0.0/0 via $VCPEGW
 $CPE_EXEC ip route add $CUSTPREFIX via $CUSTGW

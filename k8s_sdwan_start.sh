@@ -17,7 +17,7 @@ export KUBECTL="microk8s kubectl"
 export VACC="deploy/access$NETNUM-accesschart"
 export VCPE="deploy/cpe$NETNUM-cpechart"
 export VWAN="deploy/wan$NETNUM-wanchart"
-export VRYU="deploy/ryu$NETNUM-ryuchart"
+export VCTRL="deploy/ctrl$NETNUM-ctrlchart"
 
 ./start_sdwan.sh
 

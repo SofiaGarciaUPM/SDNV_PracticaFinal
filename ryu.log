@@ -1,242 +1,566 @@
 loading app flowmanager/flowmanager.py
 loading app ryu.app.ofctl_rest
+loading app ryu.app.rest_qos
+loading app ryu.app.rest_conf_switch
+loading app qos_simple_switch_13.py
 loading app ryu.topology.switches
 loading app ryu.controller.ofp_handler
 instantiating app None of DPSet
 creating context dpset
 creating context wsgi
+instantiating app None of ConfSwitchSet
+creating context conf_switch
+instantiating app ryu.app.rest_conf_switch of ConfSwitchAPI
+instantiating app qos_simple_switch_13.py of SimpleSwitch13
+instantiating app ryu.controller.ofp_handler of OFPHandler
+instantiating app ryu.app.rest_qos of RestQoSAPI
 instantiating app flowmanager/flowmanager.py of FlowManager
 Created flowmanager
 instantiating app ryu.topology.switches of Switches
 instantiating app ryu.app.ofctl_rest of RestStatsApi
-instantiating app ryu.controller.ofp_handler of OFPHandler
-(223) wsgi starting up on http://0.0.0.0:8080
-(223) accepted ('10.0.1.1', 60241)
-10.0.1.1 - - [25/Jan/2025 18:06:50] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.005290
-(223) accepted ('10.0.1.1', 6332)
-10.0.1.1 - - [25/Jan/2025 18:06:50] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001033
-(223) accepted ('10.0.1.1', 6647)
-10.0.1.1 - - [25/Jan/2025 18:06:50] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000888
-(223) accepted ('10.0.1.1', 10906)
-10.0.1.1 - - [25/Jan/2025 18:06:50] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000926
-(223) accepted ('10.0.1.1', 8837)
-10.0.1.1 - - [25/Jan/2025 18:06:50] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001374
-(223) accepted ('10.0.1.1', 18367)
-10.0.1.1 - - [25/Jan/2025 18:06:50] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001523
-(223) accepted ('10.0.1.1', 42122)
-IOError [Errno 2] No such file or directory: u'/root/flowmanager/web/ &'
-10.0.1.1 - - [25/Jan/2025 18:07:06] "GET /home/%20& HTTP/1.1" 400 148 0.005088
-10.0.1.1 - - [25/Jan/2025 18:07:06] "GET /favicon.ico HTTP/1.1" 404 302 0.001943
-(223) accepted ('10.0.1.1', 46737)
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/ HTTP/1.1" 200 1162 0.001819
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.029613
-(223) accepted ('10.0.1.1', 30082)
-(223) accepted ('10.0.1.1', 64902)
-(223) accepted ('10.0.1.1', 39897)
-(223) accepted ('10.0.1.1', 7339)
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/css/cards.css?v2 HTTP/1.1" 200 2652 0.014514
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/js/cards.js?v2 HTTP/1.1" 200 3938 0.009771
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.001288
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.001790
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.001642
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.002009
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/js/main.js?v2 HTTP/1.1" 200 2915 0.004102
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.001496
-(223) accepted ('10.0.1.1', 24061)
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/js/modules.js?v2 HTTP/1.1" 200 6651 0.000833
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.002562
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.001839
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /data?list=switches HTTP/1.1" 200 170 0.000464
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.001953
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.005915
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.008179
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.007622
-10.0.1.1 - - [25/Jan/2025 18:09:19] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.043769
-10.0.1.1 - - [25/Jan/2025 18:09:34] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.002316
-10.0.1.1 - - [25/Jan/2025 18:09:34] "GET /data?list=switches HTTP/1.1" 200 170 0.000325
-10.0.1.1 - - [25/Jan/2025 18:09:34] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.002263
-10.0.1.1 - - [25/Jan/2025 18:09:34] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.027633
-10.0.1.1 - - [25/Jan/2025 18:09:34] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.030142
-10.0.1.1 - - [25/Jan/2025 18:09:50] "GET /data?list=switches HTTP/1.1" 200 170 0.000331
-10.0.1.1 - - [25/Jan/2025 18:09:50] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001860
-10.0.1.1 - - [25/Jan/2025 18:09:50] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.002503
-10.0.1.1 - - [25/Jan/2025 18:09:50] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.001713
-10.0.1.1 - - [25/Jan/2025 18:09:50] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.020882
-10.0.1.1 - - [25/Jan/2025 18:10:06] "GET /data?list=switches HTTP/1.1" 200 170 0.000402
-10.0.1.1 - - [25/Jan/2025 18:10:06] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001463
-10.0.1.1 - - [25/Jan/2025 18:10:06] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.001411
-10.0.1.1 - - [25/Jan/2025 18:10:06] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.001142
-10.0.1.1 - - [25/Jan/2025 18:10:06] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.019397
-10.0.1.1 - - [25/Jan/2025 18:10:23] "GET /data?list=switches HTTP/1.1" 200 170 0.000780
-10.0.1.1 - - [25/Jan/2025 18:10:23] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.008224
-10.0.1.1 - - [25/Jan/2025 18:10:23] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.026716
-10.0.1.1 - - [25/Jan/2025 18:10:23] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.025179
-10.0.1.1 - - [25/Jan/2025 18:10:23] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.025486
-10.0.1.1 - - [25/Jan/2025 18:10:38] "GET /data?list=switches HTTP/1.1" 200 170 0.000409
-10.0.1.1 - - [25/Jan/2025 18:10:38] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.023484
-10.0.1.1 - - [25/Jan/2025 18:10:38] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.023501
-10.0.1.1 - - [25/Jan/2025 18:10:38] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.024437
-10.0.1.1 - - [25/Jan/2025 18:10:38] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.024595
-10.0.1.1 - - [25/Jan/2025 18:10:53] "GET /data?list=switches HTTP/1.1" 200 170 0.000349
-10.0.1.1 - - [25/Jan/2025 18:10:53] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.002339
-10.0.1.1 - - [25/Jan/2025 18:10:53] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.002704
-10.0.1.1 - - [25/Jan/2025 18:10:53] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.001936
-10.0.1.1 - - [25/Jan/2025 18:10:53] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.023230
-10.0.1.1 - - [25/Jan/2025 18:11:08] "GET /data?list=switches HTTP/1.1" 200 170 0.000695
-10.0.1.1 - - [25/Jan/2025 18:11:08] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.007333
-10.0.1.1 - - [25/Jan/2025 18:11:08] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.008446
-10.0.1.1 - - [25/Jan/2025 18:11:08] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.028045
-10.0.1.1 - - [25/Jan/2025 18:11:08] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.028800
-10.0.1.1 - - [25/Jan/2025 18:11:23] "GET /data?list=switches HTTP/1.1" 200 170 0.000346
-10.0.1.1 - - [25/Jan/2025 18:11:23] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003424
-10.0.1.1 - - [25/Jan/2025 18:11:23] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.004465
-10.0.1.1 - - [25/Jan/2025 18:11:23] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.004581
-10.0.1.1 - - [25/Jan/2025 18:11:23] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.025086
-10.0.1.1 - - [25/Jan/2025 18:11:38] "GET /data?list=switches HTTP/1.1" 200 170 0.000206
-10.0.1.1 - - [25/Jan/2025 18:11:38] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.024546
-10.0.1.1 - - [25/Jan/2025 18:11:38] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.025851
-10.0.1.1 - - [25/Jan/2025 18:11:38] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.026435
-10.0.1.1 - - [25/Jan/2025 18:11:38] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.024379
-10.0.1.1 - - [25/Jan/2025 18:11:53] "GET /data?list=switches HTTP/1.1" 200 170 0.000545
-10.0.1.1 - - [25/Jan/2025 18:11:53] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.003445
-10.0.1.1 - - [25/Jan/2025 18:11:53] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.024845
-10.0.1.1 - - [25/Jan/2025 18:11:53] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.025645
-10.0.1.1 - - [25/Jan/2025 18:11:53] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.026720
-10.0.1.1 - - [25/Jan/2025 18:12:08] "GET /data?list=switches HTTP/1.1" 200 170 0.000277
-10.0.1.1 - - [25/Jan/2025 18:12:08] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.029101
-10.0.1.1 - - [25/Jan/2025 18:12:08] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.004248
-10.0.1.1 - - [25/Jan/2025 18:12:08] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.005432
-10.0.1.1 - - [25/Jan/2025 18:12:08] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.027737
-10.0.1.1 - - [25/Jan/2025 18:12:23] "GET /data?list=switches HTTP/1.1" 200 170 0.000401
-10.0.1.1 - - [25/Jan/2025 18:12:23] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.002158
-10.0.1.1 - - [25/Jan/2025 18:12:23] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.002491
-10.0.1.1 - - [25/Jan/2025 18:12:23] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.020113
-10.0.1.1 - - [25/Jan/2025 18:12:23] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.020475
-10.0.1.1 - - [25/Jan/2025 18:12:38] "GET /data?list=switches HTTP/1.1" 200 170 0.000769
-10.0.1.1 - - [25/Jan/2025 18:12:38] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.021414
-10.0.1.1 - - [25/Jan/2025 18:12:38] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.021657
-10.0.1.1 - - [25/Jan/2025 18:12:38] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.022007
-10.0.1.1 - - [25/Jan/2025 18:12:38] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.022310
-10.0.1.1 - - [25/Jan/2025 18:12:54] "GET /data?list=switches HTTP/1.1" 200 170 0.000484
-10.0.1.1 - - [25/Jan/2025 18:12:54] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.008309
-10.0.1.1 - - [25/Jan/2025 18:12:54] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.008776
-10.0.1.1 - - [25/Jan/2025 18:12:54] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.009150
-10.0.1.1 - - [25/Jan/2025 18:12:54] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.030458
-10.0.1.1 - - [25/Jan/2025 18:13:09] "GET /data?list=switches HTTP/1.1" 200 170 0.000413
-10.0.1.1 - - [25/Jan/2025 18:13:09] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.023231
-10.0.1.1 - - [25/Jan/2025 18:13:09] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.023142
-10.0.1.1 - - [25/Jan/2025 18:13:09] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.023925
-10.0.1.1 - - [25/Jan/2025 18:13:09] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.024191
-10.0.1.1 - - [25/Jan/2025 18:13:24] "GET /data?list=switches HTTP/1.1" 200 170 0.000584
-10.0.1.1 - - [25/Jan/2025 18:13:24] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.018213
-10.0.1.1 - - [25/Jan/2025 18:13:24] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.014383
-10.0.1.1 - - [25/Jan/2025 18:13:24] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.014110
-10.0.1.1 - - [25/Jan/2025 18:13:24] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.031074
-10.0.1.1 - - [25/Jan/2025 18:13:39] "GET /data?list=switches HTTP/1.1" 200 170 0.000482
-10.0.1.1 - - [25/Jan/2025 18:13:39] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003034
-10.0.1.1 - - [25/Jan/2025 18:13:39] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.003151
-10.0.1.1 - - [25/Jan/2025 18:13:39] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.003445
-10.0.1.1 - - [25/Jan/2025 18:13:39] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.020874
-10.0.1.1 - - [25/Jan/2025 18:13:54] "GET /data?list=switches HTTP/1.1" 200 170 0.000352
-10.0.1.1 - - [25/Jan/2025 18:13:54] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.003855
-10.0.1.1 - - [25/Jan/2025 18:13:54] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.005826
-10.0.1.1 - - [25/Jan/2025 18:13:54] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.006055
-10.0.1.1 - - [25/Jan/2025 18:13:54] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.020086
-10.0.1.1 - - [25/Jan/2025 18:14:09] "GET /data?list=switches HTTP/1.1" 200 170 0.004200
-10.0.1.1 - - [25/Jan/2025 18:14:09] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.013764
-10.0.1.1 - - [25/Jan/2025 18:14:09] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.013791
-10.0.1.1 - - [25/Jan/2025 18:14:09] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.038147
-10.0.1.1 - - [25/Jan/2025 18:14:09] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.038971
-10.0.1.1 - - [25/Jan/2025 18:14:24] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001554
-10.0.1.1 - - [25/Jan/2025 18:14:24] "GET /data?list=switches HTTP/1.1" 200 170 0.000336
-10.0.1.1 - - [25/Jan/2025 18:14:24] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.002952
-10.0.1.1 - - [25/Jan/2025 18:14:24] "GET /data?flowsumm=1 HTTP/1.1" 200 222 0.004770
-10.0.1.1 - - [25/Jan/2025 18:14:24] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.024573
-10.0.1.1 - - [25/Jan/2025 18:14:39] "GET /data?list=switches HTTP/1.1" 200 170 0.000393
-10.0.1.1 - - [25/Jan/2025 18:14:39] "GET /data?portstat=1 HTTP/1.1" 200 1138 0.004755
-10.0.1.1 - - [25/Jan/2025 18:14:39] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003609
-10.0.1.1 - - [25/Jan/2025 18:14:39] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.003815
-10.0.1.1 - - [25/Jan/2025 18:14:39] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.027085
-10.0.1.1 - - [25/Jan/2025 18:14:54] "GET /data?list=switches HTTP/1.1" 200 170 0.000849
-10.0.1.1 - - [25/Jan/2025 18:14:54] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.004458
-10.0.1.1 - - [25/Jan/2025 18:14:54] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.025055
-10.0.1.1 - - [25/Jan/2025 18:14:54] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.029035
-10.0.1.1 - - [25/Jan/2025 18:14:54] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.029262
-10.0.1.1 - - [25/Jan/2025 18:15:09] "GET /data?portstat=1 HTTP/1.1" 200 1139 0.001824
-10.0.1.1 - - [25/Jan/2025 18:15:09] "GET /data?list=switches HTTP/1.1" 200 170 0.000158
-10.0.1.1 - - [25/Jan/2025 18:15:09] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.020510
-10.0.1.1 - - [25/Jan/2025 18:15:09] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.021143
-10.0.1.1 - - [25/Jan/2025 18:15:09] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.020953
-10.0.1.1 - - [25/Jan/2025 18:15:24] "GET /data?list=switches HTTP/1.1" 200 170 0.001362
-10.0.1.1 - - [25/Jan/2025 18:15:24] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.030998
-10.0.1.1 - - [25/Jan/2025 18:15:24] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.031228
-10.0.1.1 - - [25/Jan/2025 18:15:24] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.031302
-10.0.1.1 - - [25/Jan/2025 18:15:24] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.029813
-10.0.1.1 - - [25/Jan/2025 18:15:39] "GET /data?list=switches HTTP/1.1" 200 170 0.000352
-10.0.1.1 - - [25/Jan/2025 18:15:39] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.002929
-10.0.1.1 - - [25/Jan/2025 18:15:39] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.003068
-10.0.1.1 - - [25/Jan/2025 18:15:39] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.021771
-10.0.1.1 - - [25/Jan/2025 18:15:39] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.022025
-10.0.1.1 - - [25/Jan/2025 18:15:54] "GET /data?list=switches HTTP/1.1" 200 170 0.000696
-10.0.1.1 - - [25/Jan/2025 18:15:54] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.004220
-10.0.1.1 - - [25/Jan/2025 18:15:54] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.004646
-10.0.1.1 - - [25/Jan/2025 18:15:54] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.004804
-10.0.1.1 - - [25/Jan/2025 18:15:54] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.025307
-10.0.1.1 - - [25/Jan/2025 18:16:09] "GET /data?list=switches HTTP/1.1" 200 170 0.000370
-10.0.1.1 - - [25/Jan/2025 18:16:09] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001877
-10.0.1.1 - - [25/Jan/2025 18:16:09] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.002254
-10.0.1.1 - - [25/Jan/2025 18:16:09] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.023559
-10.0.1.1 - - [25/Jan/2025 18:16:09] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.024216
-10.0.1.1 - - [25/Jan/2025 18:16:24] "GET /data?list=switches HTTP/1.1" 200 170 0.000337
-10.0.1.1 - - [25/Jan/2025 18:16:24] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.005057
-10.0.1.1 - - [25/Jan/2025 18:16:24] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.004477
-10.0.1.1 - - [25/Jan/2025 18:16:24] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.003663
-10.0.1.1 - - [25/Jan/2025 18:16:24] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.030110
-10.0.1.1 - - [25/Jan/2025 18:16:39] "GET /data?list=switches HTTP/1.1" 200 170 0.000434
-10.0.1.1 - - [25/Jan/2025 18:16:39] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001499
-10.0.1.1 - - [25/Jan/2025 18:16:39] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.001209
-10.0.1.1 - - [25/Jan/2025 18:16:39] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.001754
-10.0.1.1 - - [25/Jan/2025 18:16:39] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.022890
-10.0.1.1 - - [25/Jan/2025 18:16:54] "GET /data?list=switches HTTP/1.1" 200 170 0.001148
-10.0.1.1 - - [25/Jan/2025 18:16:54] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.005512
-10.0.1.1 - - [25/Jan/2025 18:16:54] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.002492
-10.0.1.1 - - [25/Jan/2025 18:16:54] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.002126
-10.0.1.1 - - [25/Jan/2025 18:16:54] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.025441
-10.0.1.1 - - [25/Jan/2025 18:17:09] "GET /data?list=switches HTTP/1.1" 200 170 0.000748
-10.0.1.1 - - [25/Jan/2025 18:17:09] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003328
-10.0.1.1 - - [25/Jan/2025 18:17:09] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.004451
-10.0.1.1 - - [25/Jan/2025 18:17:09] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.004591
-10.0.1.1 - - [25/Jan/2025 18:17:09] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.026709
-10.0.1.1 - - [25/Jan/2025 18:17:24] "GET /data?list=switches HTTP/1.1" 200 170 0.000298
-10.0.1.1 - - [25/Jan/2025 18:17:24] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.005155
-10.0.1.1 - - [25/Jan/2025 18:17:24] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.005785
-10.0.1.1 - - [25/Jan/2025 18:17:24] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.006313
-10.0.1.1 - - [25/Jan/2025 18:17:24] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.025828
-10.0.1.1 - - [25/Jan/2025 18:17:39] "GET /data?list=switches HTTP/1.1" 200 170 0.000652
-10.0.1.1 - - [25/Jan/2025 18:17:39] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.005181
-10.0.1.1 - - [25/Jan/2025 18:17:39] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.025471
-10.0.1.1 - - [25/Jan/2025 18:17:39] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.025498
-10.0.1.1 - - [25/Jan/2025 18:17:39] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.025485
-10.0.1.1 - - [25/Jan/2025 18:17:54] "GET /data?list=switches HTTP/1.1" 200 170 0.000399
-10.0.1.1 - - [25/Jan/2025 18:17:54] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.005965
-10.0.1.1 - - [25/Jan/2025 18:17:54] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.032579
-10.0.1.1 - - [25/Jan/2025 18:17:54] "GET /data?portstat=1 HTTP/1.1" 200 1140 0.033418
-10.0.1.1 - - [25/Jan/2025 18:17:54] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.034518
-10.0.1.1 - - [25/Jan/2025 18:18:09] "GET /data?list=switches HTTP/1.1" 200 170 0.000849
-10.0.1.1 - - [25/Jan/2025 18:18:09] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003485
-10.0.1.1 - - [25/Jan/2025 18:18:09] "GET /data?portstat=1 HTTP/1.1" 200 1141 0.003163
-10.0.1.1 - - [25/Jan/2025 18:18:09] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.024065
-10.0.1.1 - - [25/Jan/2025 18:18:09] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.024582
-10.0.1.1 - - [25/Jan/2025 18:18:24] "GET /data?list=switches HTTP/1.1" 200 170 0.000243
-10.0.1.1 - - [25/Jan/2025 18:18:24] "GET /data?portstat=1 HTTP/1.1" 200 1141 0.004703
-10.0.1.1 - - [25/Jan/2025 18:18:24] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.004094
-10.0.1.1 - - [25/Jan/2025 18:18:24] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.024910
-10.0.1.1 - - [25/Jan/2025 18:18:24] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.024776
-10.0.1.1 - - [25/Jan/2025 18:18:39] "GET /data?list=switches HTTP/1.1" 200 170 0.000745
-10.0.1.1 - - [25/Jan/2025 18:18:39] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003715
-10.0.1.1 - - [25/Jan/2025 18:18:39] "GET /data?flowsumm=1 HTTP/1.1" 200 223 0.003135
-10.0.1.1 - - [25/Jan/2025 18:18:39] "GET /data?portstat=1 HTTP/1.1" 200 1141 0.003401
-10.0.1.1 - - [25/Jan/2025 18:18:39] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.029639
-E0125 19:34:04.971257  236558 v2.go:167] "Unhandled Error" err="next reader: read tcp 127.0.0.1:55348->127.0.0.1:16443: i/o timeout"
-E0125 19:34:04.973305  236558 v2.go:150] "Unhandled Error" err="next reader: read tcp 127.0.0.1:55348->127.0.0.1:16443: i/o timeout"
-error: error reading from error stream: next reader: read tcp 127.0.0.1:55348->127.0.0.1:16443: i/o timeout
+(93) wsgi starting up on http://0.0.0.0:8080
+[QoS][INFO] dpid=0000000000000001: Join qos switch.
+[QoS][INFO] dpid=0000000000000002: Join qos switch.
+packet in 1 2a:1a:91:3d:92:90 33:33:00:00:00:16 3
+packet in 1 2a:1a:91:3d:92:90 33:33:00:00:00:16 3
+packet in 1 2a:1a:91:3d:92:90 33:33:ff:3d:92:90 3
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+packet in 1 2a:1a:91:3d:92:90 33:33:00:00:00:16 3
+packet in 1 2a:1a:91:3d:92:90 33:33:00:00:00:02 3
+[QoS][INFO] dpid=0000000000000003: Join qos switch.
+(93) accepted ('10.0.1.1', 43252)
+10.0.1.1 - - [28/Jan/2025 19:05:57] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.011549
+(93) accepted ('10.0.1.1', 45534)
+10.0.1.1 - - [28/Jan/2025 19:05:57] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001185
+(93) accepted ('10.0.1.1', 16340)
+10.0.1.1 - - [28/Jan/2025 19:05:57] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001138
+(93) accepted ('10.0.1.1', 3445)
+10.0.1.1 - - [28/Jan/2025 19:05:57] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001130
+(93) accepted ('10.0.1.1', 26596)
+10.0.1.1 - - [28/Jan/2025 19:05:57] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.002128
+(93) accepted ('10.0.1.1', 39543)
+10.0.1.1 - - [28/Jan/2025 19:05:57] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.001192
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:16 2
+(93) accepted ('10.0.1.1', 49386)
+10.0.1.1 - - [28/Jan/2025 19:05:58] "PUT /v1.0/conf/switches/0000000000000003/ovsdb_addr HTTP/1.1" 201 120 0.000562
+(93) accepted ('10.0.1.1', 49396)
+10.0.1.1 - - [28/Jan/2025 19:05:58] "POST /qos/rules/0000000000000003 HTTP/1.1" 200 223 0.000888
+(93) accepted ('10.0.1.1', 49410)
+10.0.1.1 - - [28/Jan/2025 19:05:58] "POST /qos/queue/0000000000000003 HTTP/1.1" 200 281 0.048135
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+(93) accepted ('10.0.1.1', 16291)
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/ HTTP/1.1" 200 1162 0.005416
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.001054
+(93) accepted ('10.0.1.1', 15108)
+(93) accepted ('10.0.1.1', 60714)
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/css/cards.css?v2 HTTP/1.1" 200 2652 0.000932
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.001129
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000871
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.001386
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/js/main.js?v2 HTTP/1.1" 200 2915 0.001116
+(93) accepted ('10.0.1.1', 19547)
+(93) accepted ('10.0.1.1', 25346)
+(93) accepted ('10.0.1.1', 13396)
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/js/cards.js?v2 HTTP/1.1" 200 3938 0.000792
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/js/modules.js?v2 HTTP/1.1" 200 6651 0.001172
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000745
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.001088
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.001084
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.002545
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /data?list=switches HTTP/1.1" 200 183 0.000619
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.001296
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.002358
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /data?portstat=1 HTTP/1.1" 200 1141 0.005873
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.006354
+10.0.1.1 - - [28/Jan/2025 19:06:16] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.034932
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/flows.html HTTP/1.1" 200 1340 0.002395
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.002211
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.002276
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000423
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000355
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/js/common.js?v2 HTTP/1.1" 200 24001 0.001301
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/js/flowtables.js?v2 HTTP/1.1" 200 3754 0.002660
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000244
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000267
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000457
+10.0.1.1 - - [28/Jan/2025 19:06:20] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000361
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000693
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.000397
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /data?list=switches HTTP/1.1" 200 183 0.000484
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /status?status=flows&dpid=1 HTTP/1.1" 200 2059 0.004875
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /status?status=flows&dpid=2 HTTP/1.1" 200 599 0.003690
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /status?status=flows&dpid=3 HTTP/1.1" 200 887 0.004593
+10.0.1.1 - - [28/Jan/2025 19:06:21] "GET /home/img/all_icons.svg HTTP/1.1" 200 3671 0.003465
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+packet in 3 66:d0:0b:31:bd:05 33:33:00:00:00:02 2
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+packet in 3 b6:f5:1c:65:03:27 33:33:00:00:00:02 2
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/groups.html HTTP/1.1" 200 1119 0.003224
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000482
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000246
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/js/common.js?v1 HTTP/1.1" 200 24001 0.000241
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/js/grouptables.js?v1 HTTP/1.1" 200 4774 0.001402
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000294
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.000487
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000171
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000163
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000164
+10.0.1.1 - - [28/Jan/2025 19:07:45] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000367
+10.0.1.1 - - [28/Jan/2025 19:07:46] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000392
+10.0.1.1 - - [28/Jan/2025 19:07:46] "GET /data?list=switches HTTP/1.1" 200 183 0.000395
+10.0.1.1 - - [28/Jan/2025 19:07:46] "GET /status?status=groups&dpid=1 HTTP/1.1" 200 198 0.001638
+10.0.1.1 - - [28/Jan/2025 19:07:46] "GET /status?status=groups&dpid=2 HTTP/1.1" 200 198 0.002383
+10.0.1.1 - - [28/Jan/2025 19:07:46] "GET /status?status=groups&dpid=3 HTTP/1.1" 200 198 0.001635
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/index.html HTTP/1.1" 200 1162 0.000572
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000484
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000366
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000251
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000316
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/js/main.js?v2 HTTP/1.1" 200 2915 0.000346
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/js/modules.js?v2 HTTP/1.1" 200 6651 0.000190
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/js/cards.js?v2 HTTP/1.1" 200 3938 0.000304
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000158
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/css/cards.css?v2 HTTP/1.1" 200 2652 0.000256
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000546
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000829
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /data?list=switches HTTP/1.1" 200 183 0.000451
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.001517
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001879
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /data?portstat=1 HTTP/1.1" 200 1145 0.001505
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.001590
+10.0.1.1 - - [28/Jan/2025 19:07:47] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.023445
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+10.0.1.1 - - [28/Jan/2025 19:08:02] "GET /data?list=switches HTTP/1.1" 200 183 0.000373
+10.0.1.1 - - [28/Jan/2025 19:08:02] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.002448
+10.0.1.1 - - [28/Jan/2025 19:08:02] "GET /data?portstat=1 HTTP/1.1" 200 1145 0.003276
+10.0.1.1 - - [28/Jan/2025 19:08:02] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.003250
+10.0.1.1 - - [28/Jan/2025 19:08:02] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.028458
+(93) accepted ('10.0.1.1', 43572)
+10.0.1.1 - - [28/Jan/2025 19:08:09] "GET /qos/queue/0000000000000003 HTTP/1.1" 200 317 0.000298
+10.0.1.1 - - [28/Jan/2025 19:08:09] "GET /favicon.ico HTTP/1.1" 404 302 0.001899
+(93) accepted ('10.0.1.1', 36916)
+10.0.1.1 - - [28/Jan/2025 19:08:14] "GET /qos/queue/0000000000000003 HTTP/1.1" 200 317 0.000300
+10.0.1.1 - - [28/Jan/2025 19:08:17] "GET /data?list=switches HTTP/1.1" 200 183 0.000460
+(93) accepted ('10.0.1.1', 57912)
+10.0.1.1 - - [28/Jan/2025 19:08:17] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003776
+10.0.1.1 - - [28/Jan/2025 19:08:17] "GET /data?portstat=1 HTTP/1.1" 200 1145 0.004415
+10.0.1.1 - - [28/Jan/2025 19:08:17] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.027556
+10.0.1.1 - - [28/Jan/2025 19:08:17] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.027648
+10.0.1.1 - - [28/Jan/2025 19:08:24] "GET /qos/rules/0000000000000003 HTTP/1.1" 200 337 0.002859
+10.0.1.1 - - [28/Jan/2025 19:08:24] "GET /favicon.ico HTTP/1.1" 404 302 0.000617
+10.0.1.1 - - [28/Jan/2025 19:08:32] "GET /data?list=switches HTTP/1.1" 200 183 0.000916
+(93) accepted ('10.0.1.1', 14738)
+10.0.1.1 - - [28/Jan/2025 19:08:32] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.002482
+10.0.1.1 - - [28/Jan/2025 19:08:32] "GET /data?portstat=1 HTTP/1.1" 200 1144 0.002295
+10.0.1.1 - - [28/Jan/2025 19:08:32] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.002279
+10.0.1.1 - - [28/Jan/2025 19:08:32] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.021687
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/flows.html HTTP/1.1" 200 1340 0.000618
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000570
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000298
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/js/common.js?v2 HTTP/1.1" 200 24001 0.000385
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/js/flowtables.js?v2 HTTP/1.1" 200 3754 0.000372
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000369
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.000335
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000209
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000184
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000177
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000435
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000397
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.000444
+10.0.1.1 - - [28/Jan/2025 19:08:35] "GET /data?list=switches HTTP/1.1" 200 183 0.000536
+10.0.1.1 - - [28/Jan/2025 19:08:36] "GET /status?status=flows&dpid=1 HTTP/1.1" 200 2069 0.004603
+10.0.1.1 - - [28/Jan/2025 19:08:36] "GET /status?status=flows&dpid=2 HTTP/1.1" 200 601 0.005014
+10.0.1.1 - - [28/Jan/2025 19:08:36] "GET /status?status=flows&dpid=3 HTTP/1.1" 200 891 0.001986
+10.0.1.1 - - [28/Jan/2025 19:08:36] "GET /home/img/all_icons.svg HTTP/1.1" 200 3671 0.000593
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/flowform.html HTTP/1.1" 200 5925 0.003877
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000458
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000330
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/css/form.css?v3 HTTP/1.1" 200 4148 0.002174
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/js/flowmodvalidate.js?v2 HTTP/1.1" 200 3573 0.001594
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000565
+(93) accepted ('10.0.1.1', 9780)
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/js/flowfill.js?v2 HTTP/1.1" 200 5834 0.001740
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000232
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/js/flowmod.js?v2 HTTP/1.1" 200 7410 0.000864
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000475
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000454
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/data/actions.json HTTP/1.1" 200 2805 0.001986
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /home/data/matches.json HTTP/1.1" 200 16426 0.001472
+10.0.1.1 - - [28/Jan/2025 19:09:42] "GET /data?list=switches HTTP/1.1" 200 183 0.000416
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/groupform.html HTTP/1.1" 200 3313 0.004456
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000461
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000300
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000425
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000374
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/js/groupmodvalidate.js?v2 HTTP/1.1" 200 3028 0.001397
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/js/groupmod.js?v2 HTTP/1.1" 200 6234 0.001032
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/css/form.css?v3 HTTP/1.1" 200 4148 0.000315
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000291
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000545
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /home/data/actions.json HTTP/1.1" 200 2805 0.000541
+10.0.1.1 - - [28/Jan/2025 19:09:49] "GET /data?list=switches HTTP/1.1" 200 183 0.000352
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/meters.html HTTP/1.1" 200 1107 0.002035
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000406
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000156
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000122
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000368
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/js/common.js?v1 HTTP/1.1" 200 24001 0.000241
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/js/metertables.js?v1 HTTP/1.1" 200 4863 0.001661
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000226
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.000152
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000220
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000319
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.000404
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000299
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /data?list=switches HTTP/1.1" 200 183 0.000421
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /status?status=meters&dpid=2 HTTP/1.1" 200 198 0.001856
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /status?status=meters&dpid=1 HTTP/1.1" 200 198 0.004275
+10.0.1.1 - - [28/Jan/2025 19:09:50] "GET /status?status=meters&dpid=3 HTTP/1.1" 200 198 0.002030
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/flowform.html HTTP/1.1" 200 5925 0.000471
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000535
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000297
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/css/form.css?v3 HTTP/1.1" 200 4148 0.000353
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000300
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000247
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/js/flowfill.js?v2 HTTP/1.1" 200 5834 0.000254
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/js/flowmodvalidate.js?v2 HTTP/1.1" 200 3573 0.000305
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/js/flowmod.js?v2 HTTP/1.1" 200 7410 0.000232
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000428
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000619
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/data/actions.json HTTP/1.1" 200 2805 0.000467
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /data?list=switches HTTP/1.1" 200 183 0.000301
+10.0.1.1 - - [28/Jan/2025 19:09:51] "GET /home/data/matches.json HTTP/1.1" 200 16426 0.000432
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/flows.html HTTP/1.1" 200 1340 0.000954
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000507
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000351
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.000276
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000204
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000371
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000367
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/js/common.js?v2 HTTP/1.1" 200 24001 0.000315
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000209
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/js/flowtables.js?v2 HTTP/1.1" 200 3754 0.000242
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000450
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000476
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /data?list=switches HTTP/1.1" 200 183 0.000807
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /status?status=flows&dpid=1 HTTP/1.1" 200 2064 0.004056
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /status?status=flows&dpid=3 HTTP/1.1" 200 891 0.002036
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /status?status=flows&dpid=2 HTTP/1.1" 200 599 0.003372
+10.0.1.1 - - [28/Jan/2025 19:09:53] "GET /home/img/all_icons.svg HTTP/1.1" 200 3671 0.000578
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+10.0.1.1 - - [28/Jan/2025 19:11:17] "GET /home/config.html HTTP/1.1" 200 2233 0.003984
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000574
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000318
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/js/common.js HTTP/1.1" 200 24001 0.000324
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/js/config.js HTTP/1.1" 200 6407 0.001227
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000274
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/css/form.css?v3 HTTP/1.1" 200 4148 0.000266
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000236
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000357
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000411
+10.0.1.1 - - [28/Jan/2025 19:11:18] "GET /data?list=switches HTTP/1.1" 200 183 0.000521
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/flows.html HTTP/1.1" 200 1340 0.000418
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000447
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000369
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000545
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000268
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/js/common.js?v2 HTTP/1.1" 200 24001 0.000427
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/js/flowtables.js?v2 HTTP/1.1" 200 3754 0.000314
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000416
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.000356
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000241
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000456
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.000528
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000447
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /data?list=switches HTTP/1.1" 200 183 0.000430
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /status?status=flows&dpid=1 HTTP/1.1" 200 2069 0.004883
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /status?status=flows&dpid=2 HTTP/1.1" 200 601 0.004684
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /status?status=flows&dpid=3 HTTP/1.1" 200 891 0.002648
+10.0.1.1 - - [28/Jan/2025 19:11:22] "GET /home/img/all_icons.svg HTTP/1.1" 200 3671 0.000451
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/index.html HTTP/1.1" 200 1162 0.000446
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000382
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000279
+(93) accepted ('10.0.1.1', 49398)
+(93) accepted ('10.0.1.1', 63576)
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000216
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000718
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/js/main.js?v2 HTTP/1.1" 200 2915 0.000241
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/js/modules.js?v2 HTTP/1.1" 200 6651 0.000211
+(93) accepted ('10.0.1.1', 19182)
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/js/cards.js?v2 HTTP/1.1" 200 3938 0.000350
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000196
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/css/cards.css?v2 HTTP/1.1" 200 2652 0.000260
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000315
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000530
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /data?list=switches HTTP/1.1" 200 183 0.000414
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.001197
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.001697
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /data?portstat=1 HTTP/1.1" 200 1145 0.001996
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.001950
+10.0.1.1 - - [28/Jan/2025 19:11:23] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.026982
+10.0.1.1 - - [28/Jan/2025 19:11:38] "GET /data?list=switches HTTP/1.1" 200 183 0.000419
+(93) accepted ('10.0.1.1', 21135)
+10.0.1.1 - - [28/Jan/2025 19:11:38] "GET /data?portstat=1 HTTP/1.1" 200 1144 0.004996
+10.0.1.1 - - [28/Jan/2025 19:11:38] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.028930
+10.0.1.1 - - [28/Jan/2025 19:11:38] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.030413
+10.0.1.1 - - [28/Jan/2025 19:11:38] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.030311
+10.0.1.1 - - [28/Jan/2025 19:11:49] "GET /data?list=switches HTTP/1.1" 200 183 0.000482
+(93) accepted ('10.0.1.1', 41104)
+10.0.1.1 - - [28/Jan/2025 19:11:49] "GET /data?switchdesc=2 HTTP/1.1" 200 279 0.006509
+10.0.1.1 - - [28/Jan/2025 19:11:49] "GET /data?portdesc=2 HTTP/1.1" 200 648 0.005926
+10.0.1.1 - - [28/Jan/2025 19:11:49] "GET /data?flowsumm=2 HTTP/1.1" 200 223 0.007146
+10.0.1.1 - - [28/Jan/2025 19:11:49] "GET /data?portstat=2 HTTP/1.1" 200 893 0.009082
+10.0.1.1 - - [28/Jan/2025 19:11:49] "GET /data?tablestat=2 HTTP/1.1" 200 17590 0.032946
+10.0.1.1 - - [28/Jan/2025 19:11:50] "GET /data?list=switches HTTP/1.1" 200 183 0.000387
+10.0.1.1 - - [28/Jan/2025 19:11:50] "GET /data?switchdesc=3 HTTP/1.1" 200 279 0.001691
+10.0.1.1 - - [28/Jan/2025 19:11:50] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.002342
+10.0.1.1 - - [28/Jan/2025 19:11:50] "GET /data?portstat=3 HTTP/1.1" 200 902 0.002163
+10.0.1.1 - - [28/Jan/2025 19:11:50] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.002374
+10.0.1.1 - - [28/Jan/2025 19:11:50] "GET /data?tablestat=3 HTTP/1.1" 200 17592 0.024171
+10.0.1.1 - - [28/Jan/2025 19:11:52] "GET /data?list=switches HTTP/1.1" 200 183 0.000494
+10.0.1.1 - - [28/Jan/2025 19:11:52] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.001540
+10.0.1.1 - - [28/Jan/2025 19:11:52] "GET /data?portstat=1 HTTP/1.1" 200 1145 0.003078
+10.0.1.1 - - [28/Jan/2025 19:11:52] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003430
+10.0.1.1 - - [28/Jan/2025 19:11:52] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.024848
+10.0.1.1 - - [28/Jan/2025 19:11:52] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.025010
+10.0.1.1 - - [28/Jan/2025 19:11:53] "GET /data?list=switches HTTP/1.1" 200 183 0.000393
+10.0.1.1 - - [28/Jan/2025 19:11:53] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.004683
+10.0.1.1 - - [28/Jan/2025 19:11:53] "GET /data?portstat=1 HTTP/1.1" 200 1144 0.005453
+10.0.1.1 - - [28/Jan/2025 19:11:53] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.005653
+10.0.1.1 - - [28/Jan/2025 19:11:53] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.028317
+10.0.1.1 - - [28/Jan/2025 19:11:55] "GET /data?list=switches HTTP/1.1" 200 183 0.000446
+10.0.1.1 - - [28/Jan/2025 19:11:55] "GET /data?portdesc=2 HTTP/1.1" 200 648 0.002360
+10.0.1.1 - - [28/Jan/2025 19:11:55] "GET /data?switchdesc=2 HTTP/1.1" 200 279 0.001990
+10.0.1.1 - - [28/Jan/2025 19:11:55] "GET /data?portstat=2 HTTP/1.1" 200 893 0.002026
+10.0.1.1 - - [28/Jan/2025 19:11:55] "GET /data?flowsumm=2 HTTP/1.1" 200 223 0.001978
+10.0.1.1 - - [28/Jan/2025 19:11:55] "GET /data?tablestat=2 HTTP/1.1" 200 17590 0.024393
+10.0.1.1 - - [28/Jan/2025 19:11:57] "GET /data?list=switches HTTP/1.1" 200 183 0.000773
+10.0.1.1 - - [28/Jan/2025 19:11:57] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.004315
+10.0.1.1 - - [28/Jan/2025 19:11:57] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.005666
+10.0.1.1 - - [28/Jan/2025 19:11:57] "GET /data?portstat=1 HTTP/1.1" 200 1145 0.006334
+10.0.1.1 - - [28/Jan/2025 19:11:57] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.006243
+10.0.1.1 - - [28/Jan/2025 19:11:57] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.038641
+10.0.1.1 - - [28/Jan/2025 19:12:00] "GET /data?list=switches HTTP/1.1" 200 183 0.000767
+10.0.1.1 - - [28/Jan/2025 19:12:00] "GET /data?portdesc=2 HTTP/1.1" 200 648 0.002078
+10.0.1.1 - - [28/Jan/2025 19:12:00] "GET /data?switchdesc=2 HTTP/1.1" 200 279 0.001905
+10.0.1.1 - - [28/Jan/2025 19:12:00] "GET /data?portstat=2 HTTP/1.1" 200 895 0.002104
+10.0.1.1 - - [28/Jan/2025 19:12:00] "GET /data?tablestat=2 HTTP/1.1" 200 17590 0.022793
+10.0.1.1 - - [28/Jan/2025 19:12:00] "GET /data?flowsumm=2 HTTP/1.1" 200 223 0.023308
+10.0.1.1 - - [28/Jan/2025 19:12:02] "GET /data?list=switches HTTP/1.1" 200 183 0.000442
+10.0.1.1 - - [28/Jan/2025 19:12:02] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.001682
+10.0.1.1 - - [28/Jan/2025 19:12:02] "GET /data?switchdesc=3 HTTP/1.1" 200 279 0.001887
+10.0.1.1 - - [28/Jan/2025 19:12:02] "GET /data?portstat=3 HTTP/1.1" 200 902 0.001041
+10.0.1.1 - - [28/Jan/2025 19:12:02] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.000981
+10.0.1.1 - - [28/Jan/2025 19:12:02] "GET /data?tablestat=3 HTTP/1.1" 200 17592 0.020767
+10.0.1.1 - - [28/Jan/2025 19:12:08] "GET /data?list=switches HTTP/1.1" 200 183 0.000801
+10.0.1.1 - - [28/Jan/2025 19:12:08] "GET /data?tablestat=3 HTTP/1.1" 200 17592 0.024075
+10.0.1.1 - - [28/Jan/2025 19:12:08] "GET /data?portstat=3 HTTP/1.1" 200 902 0.025659
+10.0.1.1 - - [28/Jan/2025 19:12:08] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.026557
+10.0.1.1 - - [28/Jan/2025 19:12:08] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.027238
+packet in 3 52:82:e1:19:3e:bd 33:33:00:00:00:02 1
+packet in 2 52:82:e1:19:3e:bd 33:33:00:00:00:02 1
+10.0.1.1 - - [28/Jan/2025 19:12:23] "GET /data?list=switches HTTP/1.1" 200 183 0.000458
+10.0.1.1 - - [28/Jan/2025 19:12:23] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.002702
+10.0.1.1 - - [28/Jan/2025 19:12:23] "GET /data?portstat=3 HTTP/1.1" 200 902 0.002865
+10.0.1.1 - - [28/Jan/2025 19:12:23] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.023163
+10.0.1.1 - - [28/Jan/2025 19:12:23] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.023430
+packet in 3 66:35:60:5e:2b:f9 33:33:00:00:00:02 2
+10.0.1.1 - - [28/Jan/2025 19:12:38] "GET /data?list=switches HTTP/1.1" 200 183 0.001274
+10.0.1.1 - - [28/Jan/2025 19:12:38] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.008927
+10.0.1.1 - - [28/Jan/2025 19:12:38] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.008747
+10.0.1.1 - - [28/Jan/2025 19:12:38] "GET /data?portstat=3 HTTP/1.1" 200 902 0.009527
+10.0.1.1 - - [28/Jan/2025 19:12:38] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.068560
+packet in 2 ee:f0:f3:59:88:b6 33:33:00:00:00:02 1
+packet in 3 76:58:00:b4:51:55 33:33:00:00:00:02 2
+10.0.1.1 - - [28/Jan/2025 19:12:53] "GET /data?list=switches HTTP/1.1" 200 183 0.006267
+10.0.1.1 - - [28/Jan/2025 19:12:53] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.006902
+10.0.1.1 - - [28/Jan/2025 19:12:53] "GET /data?portstat=3 HTTP/1.1" 200 905 0.010442
+10.0.1.1 - - [28/Jan/2025 19:12:53] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.007757
+10.0.1.1 - - [28/Jan/2025 19:12:53] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.097901
+10.0.1.1 - - [28/Jan/2025 19:13:08] "GET /data?list=switches HTTP/1.1" 200 183 0.000691
+10.0.1.1 - - [28/Jan/2025 19:13:08] "GET /data?portstat=3 HTTP/1.1" 200 903 0.003717
+10.0.1.1 - - [28/Jan/2025 19:13:08] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.002544
+10.0.1.1 - - [28/Jan/2025 19:13:08] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.090381
+10.0.1.1 - - [28/Jan/2025 19:13:08] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.092338
+(93) accepted ('10.0.1.1', 58554)
+10.0.1.1 - - [28/Jan/2025 19:13:14] "GET /qos/rules/0000000000000003 HTTP/1.1" 200 337 0.012965
+10.0.1.1 - - [28/Jan/2025 19:13:23] "GET /data?list=switches HTTP/1.1" 200 183 0.001028
+10.0.1.1 - - [28/Jan/2025 19:13:23] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.003490
+10.0.1.1 - - [28/Jan/2025 19:13:23] "GET /data?portstat=3 HTTP/1.1" 200 904 0.003106
+10.0.1.1 - - [28/Jan/2025 19:13:23] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.002981
+10.0.1.1 - - [28/Jan/2025 19:13:23] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.067928
+10.0.1.1 - - [28/Jan/2025 19:13:38] "GET /data?list=switches HTTP/1.1" 200 183 0.000519
+10.0.1.1 - - [28/Jan/2025 19:13:38] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.002267
+10.0.1.1 - - [28/Jan/2025 19:13:38] "GET /data?portstat=3 HTTP/1.1" 200 905 0.002503
+10.0.1.1 - - [28/Jan/2025 19:13:38] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.023483
+10.0.1.1 - - [28/Jan/2025 19:13:38] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.024246
+10.0.1.1 - - [28/Jan/2025 19:13:53] "GET /data?list=switches HTTP/1.1" 200 183 0.000995
+10.0.1.1 - - [28/Jan/2025 19:13:53] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.003374
+10.0.1.1 - - [28/Jan/2025 19:13:53] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.003388
+10.0.1.1 - - [28/Jan/2025 19:13:53] "GET /data?portstat=3 HTTP/1.1" 200 905 0.003475
+10.0.1.1 - - [28/Jan/2025 19:13:53] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.028045
+10.0.1.1 - - [28/Jan/2025 19:14:08] "GET /data?list=switches HTTP/1.1" 200 183 0.000209
+(93) accepted ('10.0.1.1', 15421)
+10.0.1.1 - - [28/Jan/2025 19:14:08] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.002936
+10.0.1.1 - - [28/Jan/2025 19:14:08] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.002536
+10.0.1.1 - - [28/Jan/2025 19:14:08] "GET /data?portstat=3 HTTP/1.1" 200 905 0.003125
+10.0.1.1 - - [28/Jan/2025 19:14:08] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.024579
+packet in 3 2a:1a:91:3d:92:90 33:33:00:00:00:02 2
+packet in 3 5e:bb:40:74:7f:21 33:33:00:00:00:02 2
+10.0.1.1 - - [28/Jan/2025 19:14:23] "GET /data?list=switches HTTP/1.1" 200 183 0.000564
+10.0.1.1 - - [28/Jan/2025 19:14:23] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.002674
+10.0.1.1 - - [28/Jan/2025 19:14:23] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.023854
+10.0.1.1 - - [28/Jan/2025 19:14:23] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.024229
+10.0.1.1 - - [28/Jan/2025 19:14:23] "GET /data?portstat=3 HTTP/1.1" 200 903 0.024657
+10.0.1.1 - - [28/Jan/2025 19:14:38] "GET /data?list=switches HTTP/1.1" 200 183 0.000619
+10.0.1.1 - - [28/Jan/2025 19:14:38] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.004215
+10.0.1.1 - - [28/Jan/2025 19:14:38] "GET /data?portstat=3 HTTP/1.1" 200 903 0.003828
+10.0.1.1 - - [28/Jan/2025 19:14:38] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.026926
+10.0.1.1 - - [28/Jan/2025 19:14:38] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.028809
+packet in 2 e2:53:1d:a4:98:78 33:33:00:00:00:02 1
+10.0.1.1 - - [28/Jan/2025 19:14:53] "GET /data?list=switches HTTP/1.1" 200 183 0.000881
+10.0.1.1 - - [28/Jan/2025 19:14:53] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.010432
+10.0.1.1 - - [28/Jan/2025 19:14:53] "GET /data?portstat=3 HTTP/1.1" 200 904 0.012998
+10.0.1.1 - - [28/Jan/2025 19:14:53] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.063598
+10.0.1.1 - - [28/Jan/2025 19:14:53] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.063756
+10.0.1.1 - - [28/Jan/2025 19:15:08] "GET /data?list=switches HTTP/1.1" 200 183 0.015861
+10.0.1.1 - - [28/Jan/2025 19:15:08] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.007882
+10.0.1.1 - - [28/Jan/2025 19:15:08] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.009415
+10.0.1.1 - - [28/Jan/2025 19:15:08] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.065488
+10.0.1.1 - - [28/Jan/2025 19:15:08] "GET /data?portstat=3 HTTP/1.1" 200 904 0.070150
+10.0.1.1 - - [28/Jan/2025 19:15:23] "GET /data?list=switches HTTP/1.1" 200 183 0.000359
+10.0.1.1 - - [28/Jan/2025 19:15:23] "GET /data?portdesc=3 HTTP/1.1" 200 648 0.001791
+10.0.1.1 - - [28/Jan/2025 19:15:23] "GET /data?portstat=3 HTTP/1.1" 200 903 0.002654
+10.0.1.1 - - [28/Jan/2025 19:15:23] "GET /data?flowsumm=3 HTTP/1.1" 200 224 0.000953
+10.0.1.1 - - [28/Jan/2025 19:15:23] "GET /data?tablestat=3 HTTP/1.1" 200 17594 0.028691
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/flows.html HTTP/1.1" 200 1340 0.000478
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000637
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000508
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/js/common.js?v2 HTTP/1.1" 200 24001 0.000285
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/js/flowtables.js?v2 HTTP/1.1" 200 3754 0.000304
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000342
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000477
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000500
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.001032
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000420
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000587
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000472
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/img/favicon.ico HTTP/1.1" 200 10371 0.000599
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /data?list=switches HTTP/1.1" 200 183 0.000582
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /status?status=flows&dpid=3 HTTP/1.1" 200 891 0.003417
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /status?status=flows&dpid=2 HTTP/1.1" 200 601 0.003623
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /status?status=flows&dpid=1 HTTP/1.1" 200 2071 0.005862
+10.0.1.1 - - [28/Jan/2025 19:15:27] "GET /home/img/all_icons.svg HTTP/1.1" 200 3671 0.000446
+packet in 3 66:d0:0b:31:bd:05 33:33:00:00:00:02 2
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/index.html HTTP/1.1" 200 1162 0.000487
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000653
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000234
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000226
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000280
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/js/modules.js?v2 HTTP/1.1" 200 6651 0.000295
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/js/main.js?v2 HTTP/1.1" 200 2915 0.000190
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/js/cards.js?v2 HTTP/1.1" 200 3938 0.000282
+(93) accepted ('10.0.1.1', 64182)
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000229
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/css/cards.css?v2 HTTP/1.1" 200 2652 0.000290
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000343
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000488
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /data?list=switches HTTP/1.1" 200 183 0.000391
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /data?portstat=1 HTTP/1.1" 200 1148 0.003179
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.003169
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.003457
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /data?switchdesc=1 HTTP/1.1" 200 278 0.003691
+10.0.1.1 - - [28/Jan/2025 19:15:33] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.022443
+10.0.1.1 - - [28/Jan/2025 19:15:49] "GET /data?list=switches HTTP/1.1" 200 183 0.001989
+10.0.1.1 - - [28/Jan/2025 19:15:49] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.011477
+10.0.1.1 - - [28/Jan/2025 19:15:49] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.007223
+10.0.1.1 - - [28/Jan/2025 19:15:49] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.022341
+10.0.1.1 - - [28/Jan/2025 19:15:49] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.152703
+10.0.1.1 - - [28/Jan/2025 19:16:04] "GET /data?list=switches HTTP/1.1" 200 183 0.002196
+10.0.1.1 - - [28/Jan/2025 19:16:04] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.011110
+10.0.1.1 - - [28/Jan/2025 19:16:04] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.007900
+10.0.1.1 - - [28/Jan/2025 19:16:04] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.008798
+10.0.1.1 - - [28/Jan/2025 19:16:04] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.110575
+10.0.1.1 - - [28/Jan/2025 19:16:19] "GET /data?list=switches HTTP/1.1" 200 183 0.001540
+10.0.1.1 - - [28/Jan/2025 19:16:19] "GET /data?portstat=1 HTTP/1.1" 200 1146 0.015907
+10.0.1.1 - - [28/Jan/2025 19:16:19] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.016872
+10.0.1.1 - - [28/Jan/2025 19:16:19] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.011492
+10.0.1.1 - - [28/Jan/2025 19:16:19] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.066870
+10.0.1.1 - - [28/Jan/2025 19:16:35] "GET /data?list=switches HTTP/1.1" 200 183 0.000495
+10.0.1.1 - - [28/Jan/2025 19:16:35] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.018532
+10.0.1.1 - - [28/Jan/2025 19:16:35] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.009655
+10.0.1.1 - - [28/Jan/2025 19:16:35] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.010746
+10.0.1.1 - - [28/Jan/2025 19:16:35] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.085659
+10.0.1.1 - - [28/Jan/2025 19:16:50] "GET /data?list=switches HTTP/1.1" 200 183 0.000906
+10.0.1.1 - - [28/Jan/2025 19:16:50] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.091100
+10.0.1.1 - - [28/Jan/2025 19:16:50] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.097045
+10.0.1.1 - - [28/Jan/2025 19:16:50] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.101412
+10.0.1.1 - - [28/Jan/2025 19:16:50] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.105545
+10.0.1.1 - - [28/Jan/2025 19:17:05] "GET /data?list=switches HTTP/1.1" 200 183 0.000639
+10.0.1.1 - - [28/Jan/2025 19:17:05] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.008447
+10.0.1.1 - - [28/Jan/2025 19:17:05] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.008150
+10.0.1.1 - - [28/Jan/2025 19:17:05] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.004183
+10.0.1.1 - - [28/Jan/2025 19:17:05] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.059779
+10.0.1.1 - - [28/Jan/2025 19:17:20] "GET /data?list=switches HTTP/1.1" 200 183 0.002266
+10.0.1.1 - - [28/Jan/2025 19:17:20] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.099626
+10.0.1.1 - - [28/Jan/2025 19:17:20] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.099961
+10.0.1.1 - - [28/Jan/2025 19:17:20] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.103458
+10.0.1.1 - - [28/Jan/2025 19:17:20] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.099568
+10.0.1.1 - - [28/Jan/2025 19:17:35] "GET /data?list=switches HTTP/1.1" 200 183 0.005201
+10.0.1.1 - - [28/Jan/2025 19:17:35] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.012001
+10.0.1.1 - - [28/Jan/2025 19:17:35] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.012694
+10.0.1.1 - - [28/Jan/2025 19:17:35] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.013359
+10.0.1.1 - - [28/Jan/2025 19:17:35] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.067737
+10.0.1.1 - - [28/Jan/2025 19:17:50] "GET /data?list=switches HTTP/1.1" 200 183 0.001147
+10.0.1.1 - - [28/Jan/2025 19:17:50] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.011051
+10.0.1.1 - - [28/Jan/2025 19:17:50] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.012258
+10.0.1.1 - - [28/Jan/2025 19:17:50] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.016462
+10.0.1.1 - - [28/Jan/2025 19:17:50] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.100624
+packet in 3 b6:f5:1c:65:03:27 33:33:00:00:00:02 2
+10.0.1.1 - - [28/Jan/2025 19:18:05] "GET /data?list=switches HTTP/1.1" 200 183 0.001110
+10.0.1.1 - - [28/Jan/2025 19:18:05] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.004890
+10.0.1.1 - - [28/Jan/2025 19:18:05] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.005265
+10.0.1.1 - - [28/Jan/2025 19:18:05] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.005181
+10.0.1.1 - - [28/Jan/2025 19:18:05] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.061900
+10.0.1.1 - - [28/Jan/2025 19:18:20] "GET /data?list=switches HTTP/1.1" 200 183 0.000797
+10.0.1.1 - - [28/Jan/2025 19:18:20] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.009633
+10.0.1.1 - - [28/Jan/2025 19:18:20] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.058343
+10.0.1.1 - - [28/Jan/2025 19:18:20] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.005424
+10.0.1.1 - - [28/Jan/2025 19:18:20] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.006455
+10.0.1.1 - - [28/Jan/2025 19:18:35] "GET /data?list=switches HTTP/1.1" 200 183 0.001867
+10.0.1.1 - - [28/Jan/2025 19:18:35] "GET /data?flowsumm=1 HTTP/1.1" 200 224 0.008019
+10.0.1.1 - - [28/Jan/2025 19:18:35] "GET /data?portdesc=1 HTTP/1.1" 200 813 0.011140
+10.0.1.1 - - [28/Jan/2025 19:18:35] "GET /data?portstat=1 HTTP/1.1" 200 1147 0.007134
+10.0.1.1 - - [28/Jan/2025 19:18:35] "GET /data?tablestat=1 HTTP/1.1" 200 17592 0.124993
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/flows.html HTTP/1.1" 200 1340 0.000495
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/js/jquery-3.7.1.min.js HTTP/1.1" 200 87674 0.000504
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/js/common.js?v2 HTTP/1.1" 200 24001 0.000244
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/js/mainmenu.js HTTP/1.1" 200 1986 0.000208
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/js/flowtables.js?v2 HTTP/1.1" 200 3754 0.000184
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/css/style.css?v2 HTTP/1.1" 200 4550 0.000220
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/css/frames.css?v1 HTTP/1.1" 200 3805 0.000632
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/css/table.css?v2 HTTP/1.1" 200 2582 0.000243
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/css/menu.css?v2 HTTP/1.1" 200 1688 0.000220
+(93) accepted ('10.0.1.1', 21334)
+(93) accepted ('10.0.1.1', 54218)
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/css/tabs.css?v1 HTTP/1.1" 200 1694 0.000235
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/css/colors.css HTTP/1.1" 200 1289 0.000619
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/img/switch.svg HTTP/1.1" 200 2219 0.000437
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /data?list=switches HTTP/1.1" 200 183 0.000304
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /status?status=flows&dpid=1 HTTP/1.1" 200 2071 0.003581
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /status?status=flows&dpid=2 HTTP/1.1" 200 601 0.003466
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /status?status=flows&dpid=3 HTTP/1.1" 200 895 0.002694
+10.0.1.1 - - [28/Jan/2025 19:18:46] "GET /home/img/all_icons.svg HTTP/1.1" 200 3671 0.000371
+(93) accepted ('10.0.1.1', 51322)
+10.0.1.1 - - [28/Jan/2025 19:19:47] "GET /qos/queue/0000000000000003 HTTP/1.1" 200 317 0.000709
+10.0.1.1 - - [28/Jan/2025 19:19:47] "GET /favicon.ico HTTP/1.1" 404 302 0.000647
+[QoS][INFO] dpid=0000000000000003: Leave qos switch.
+[QoS][INFO] dpid=0000000000000002: Leave qos switch.
+[QoS][INFO] dpid=0000000000000001: Leave qos switch.
+command terminated with exit code 137

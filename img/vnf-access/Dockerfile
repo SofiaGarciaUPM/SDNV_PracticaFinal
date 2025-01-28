@@ -15,7 +15,7 @@ RUN apt-get update \
     iproute2 \
     curl \
     nano \
-    vim 
+    vim
     
-
+COPY README.txt README.txt
 
