@@ -127,7 +127,7 @@ curl -X POST -d @json/sdedge$NETNUM/to-voip.json $RYU_ADD_URL
 ## 7. Aplica las reglas de QoS
 ## *******************************************************************************************
 ## | Grupo |        Sentido                  |Global(Mbps) | Puerto dst = 5005 (mínimo, Kbps)|
-## | G16   | Subida: Sede remota --> voip-gw |     3,4     |                1800             |
+## | G5    | Subida: Sede remota --> voip-gw |     3,4     |                1800             |
 ## *******************************************************************************************
 
 echo "## 7. Aplica las reglas de QoS"
